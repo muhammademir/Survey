@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import "tailwindcss";
+@source "../**/*.{vue,js,ts,jsx,tsx}";
+@source "../../index.html";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+:root {
+  color-scheme: light;
+  --background: 220 33% 98%;       /* #F8F9FD soft clean off-white/gray */
+  --foreground: 224 35% 15%;       /* #1E2538 dark navy text */
+
+  --card: 0 0% 100%;               /* #FFFFFF crisp white cards */
+  --card-foreground: 224 35% 15%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 224 35% 15%;
+
+  --primary: 238 78% 61%;          /* #4E53E9 exact vibrant indigo from screenshot */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 220 20% 96%;        /* #F1F3F8 soft grayish lavender */
+  --secondary-foreground: 224 35% 15%;
+
+  --muted: 220 20% 96%;
+  --muted-foreground: 220 14% 48%; /* #6B7280 */
+
+  --accent: 238 85% 97%;           /* #EEF1FD active light tint */
+  --accent-foreground: 238 78% 61%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 220 20% 92%;           /* #EDF1F7 very subtle card border */
+  --input: 220 20% 90%;            /* #E2E6EE */
+  --ring: 238 78% 61%;
+
+  --radius: 0.875rem;              /* 14px smooth rounded corners */
+}
+
+html, body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Date & Time Picker Light Theme Styling */
+input[type="date"],
+input[type="datetime-local"],
+input[type="time"] {
+  color-scheme: light;
+  cursor: pointer;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.85;
+  padding: 4px;
+  border-radius: 6px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover,
+input[type="time"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
