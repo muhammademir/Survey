@@ -1,6 +1,6 @@
-# 📋 Sistem Aplikasi Survei & Kuesioner Online (Fullstack)
+# 📋 Sistem Aplikasi Survei & Kuesioner Online
 
-Aplikasi kuesioner dan survei online modern berbasis web dengan arsitektur terpisah (*decoupled*) antara **Backend REST API (Laravel + Sanctum Stateful Auth)** dan **Frontend SPA (Vue 3 + TypeScript + Vite + Tailwind CSS + Pinia + Chart.js)**.
+Aplikasi kuesioner dan survei online modern berbasis web dengan arsitektur terpisah antara **Backend REST API (Laravel + Sanctum Stateful Auth)** dan **Frontend SPA (Vue 3 + TypeScript + Vite + Tailwind CSS + Pinia + Chart.js)**.
 
 ---
 
