@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\IndexSurveyRequest;
 use App\Http\Requests\StoreSurveyRequest;
 use App\Http\Requests\UpdateSurveyRequest;
 use App\Http\Resources\SurveyResource;
 use App\Models\Survey;
 use App\Services\SurveyService;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 
 class SurveyController extends Controller
 {
@@ -19,11 +19,12 @@ class SurveyController extends Controller
     /**
      * [Admin] Daftar semua survey
      */
-    public function index(Request $request): JsonResponse
+    public function index(IndexSurveyRequest $request): JsonResponse
     {
+        $validated = $request->validated();
         $surveys = $this->surveyService->list(
-            $request->input('status'),
-            $request->input('search'),
+            $validated['status'] ?? null,
+            $validated['search'] ?? null,
         );
 
         return response()->json($surveys);

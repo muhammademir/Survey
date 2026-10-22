@@ -249,7 +249,8 @@ class UserController extends Controller
     public function updateProfile(UpdateProfileRequest $request): JsonResponse
     {
         $user = $request->user();
-        $user->update($request->validated());
+        // Defense-in-depth: hanya izinkan field yang benar-benar boleh diubah user
+        $user->update($request->safe()->only(['name', 'email', 'birth_date', 'phone']));
 
         return response()->json([
             'message' => 'Profil berhasil diperbarui',
